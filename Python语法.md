@@ -71,6 +71,40 @@ d.update(f)
 print (d)
 >>>{"a":8,"c":"hi","y":"OK"}
 ```
-4、字符串的转换
+4、字符串处理
 
-s = str(任意类型数据)
+(1)字符串的转换：s = str(任意类型数据)
+
+(2)字符串的合并：通过“+”，不同类型的数据无法合并，可先转化再合并
+```python
+a = 1
+a = str(a)
+b = "sss"
+print (a + b)
+>>>1sss
+```
+(3)字符串的截取，split(字符/字符串,分割次数)
+```python
+a = "a=abc,b=123,ccc,(1,2)"
+print (a.split(","))
+>>>['a=abc','b=123','ccc','(1','2)']
+print (type(a.split(",")))
+>>><class 'list'>
+print (a.split(",")[2])
+>>>'ccc'
+print (a.split(",",2))
+>>>['a=abc','b=123','ccc','(1,2)']
+print (a.split(",")[0].split("=")[1])
+>>>abc
+print (a[3])
+>>>b
+```
+(4)字符串的替换：replace(原字符串,替换的字符串,替换次数)
+```python
+a = "a=abc,b=123,ccc,(1,2)"
+print (a.replace(',','and'))
+>>>a=abcandb=123andcccand(1and2)
+print (a.replace(',','and',2))
+>>>a=abcandb=123andccc,(1,2)
+```
+
