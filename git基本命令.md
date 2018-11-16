@@ -156,3 +156,9 @@ git push origin :refs/tags/<tagname>
 ```git
 git pull origin master
 ```
+41、删除本地文件，并同步将github中响应文件删除：
+```git
+git rm aaa.txt
+git commit -m "delete aaa.txt"
+git push origin master
+```
