@@ -2,8 +2,6 @@
 
 ```os.listdir()```,显示路径下所有文件
 
-```os.getcwd()```获取当前工作路径
-
 ```os.chdir()```切换到路径
 
 ```os.mkdir()```创建路径
@@ -20,13 +18,15 @@
 
 ```os.path.splittext()```将字符串路径和扩展名分开
 
+```os.getcwd()```获取当前工作路径
+
+```os.path.abspath(os.path.dirname(__file__))```获取当前工作目录
+
 ```python
 work_path = "E:\script\pythonTest"
 test_file = "E:\script\pythonTest\\test.py"
 print(os.listdir(work_path))
 >>>['.idea', 'filter.py', 'map_reduce.py', 'sorted.py', 'test.py']
-print(os.getcwd())
->>>F:\Script\PracticePython
 print(os.path.exists(work_path))
 >>>True
 print(os.path.exists(test_file))
@@ -51,4 +51,18 @@ print(os.path.splitext(work_path))
 >>>("E:\script\pythonTest","")
 print(os.path.splitext(test_file))
 >>>("E:\script\pythonTest\\test",".py")
+print(__file__)
+>>>F:/Script/PracticePython/test1.py
+print('***获取当前目录***')
+print(os.getcwd())
+print(os.path.abspath(os.path.dirname(__file__)))
+>>>F:\Script\PracticePython
+print('***获取上级目录***')
+print(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
+print(os.path.abspath(os.path.dirname(os.getcwd())))
+print(os.path.abspath(os.path.join(os.getcwd(), "..")))
+>>>F:\Script
+print('***获取上上级目录***')
+print(os.path.abspath(os.path.join(os.getcwd(), "../..")))
+>>>F:\
 ```
