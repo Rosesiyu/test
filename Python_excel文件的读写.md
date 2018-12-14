@@ -15,4 +15,5 @@ for j in range(0, cols_num):
     col_value.append(col)
 print(col_value)
 print(sheet.cell(2, 1).value)   #获取单元格
+
 ```
