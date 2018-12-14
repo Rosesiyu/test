@@ -1,5 +1,18 @@
 ```python
 import xlrd
-import xlwd
-
+file = xlrd.open_workbook("Grades.xls")   #打开Excel文件读取数据
+sheet = file.sheet_by_name("Math")  #通过名称获取工作表
+rows_num = sheet.nrows  # 读取总行数
+cols_num = sheet.ncols  # 读取列列数
+row_value = []
+col_value = []
+for i in range(0, rows_num):
+    row = sheet.row_values(i)   #读取整行的值
+    row_value.append(row)
+print(row_value)
+for j in range(0, cols_num):
+    col = sheet.col_values(j)   #读取整列的值
+    col_value.append(col)
+print(col_value)
+print(sheet.cell(2, 1).value)   #获取单元格
 ```
