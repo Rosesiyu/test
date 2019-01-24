@@ -249,10 +249,14 @@ adb help
 adb get-product
 ```
 57.跑monkey：```adb shell monkey -v -p your.package.name 500 ```
+```adb shell monkey -p fitshang.com.shaperlauncher --ignore-crashes --ignore-timeouts --throttle 380 -v -s 3500 300000 > E:\bugreport\monkey_log.txt```
 
 58.cpu使用情况
 ```
-top -m 10 -s cpu
-dumpsys meminfo Bilibili，
+adb shell top -m 10 -s cpu dumpsys meminfo balabala
+
+adb shell dumpsys cpuinfo | find "fitshang.com.shaperlauncher"
+
+adb shell top | find "fitshang.com.shaperlauncher"
 ```
 58.RSS值:```adb shell ps | find "assistant"```
